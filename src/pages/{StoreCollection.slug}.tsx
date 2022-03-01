@@ -5,7 +5,7 @@ import { Headphones as HeadphonesIcon } from 'phosphor-react'
 import React from 'react'
 import Hero from 'src/components/sections/Hero'
 import ProductGallery from 'src/components/sections/ProductGallery'
-import ProductShelf from 'src/components/sections/ProductShelf'
+import TemporaryShelf from 'src/components/sections/TemporaryShelf'
 import ScrollToTopButton from 'src/components/ui/ScrollToTopButton'
 import { ITEMS_PER_PAGE } from 'src/constants'
 import { useSearchParams } from 'src/hooks/useSearchParams'
@@ -61,11 +61,6 @@ function Page(props: Props) {
         itemListElements={collection?.breadcrumbList.itemListElement ?? []}
       />
 
-      {/*
-        Sections: Components imported from '../components/sections' only.
-        Do not import or render components from any other folder in here.
-      */}
-
       <section className="product-listing__breadcrumb / grid-content">
         <Breadcrumb
           breadcrumbList={collection?.breadcrumbList.itemListElement}
@@ -92,7 +87,7 @@ function Page(props: Props) {
         <section className="page__section page__section-shelf page__section-divisor / grid-section">
           <h2 className="title-section / grid-content">You might also like</h2>
           <div className="page__section-content">
-            <ProductShelf products={youMightAlsoLikeProducts.slice(0, 5)} />
+            <TemporaryShelf products={youMightAlsoLikeProducts.slice(0, 5)} />
           </div>
         </section>
       )}
